@@ -19,3 +19,4 @@ To remove the settings of the setup-script run the uninstall-script.
 
 I tested these scripts with raspbian jessie on my RaspberyPi B 2.
 The setup-script adds settings to config-files (/boot/cmdline.txt /boot/config.txt /etc/rc.local) and creates a few needed config-files. Further it installs xinput-calibrator from the standard raspbian-jessie-repository.
+Probably the flexfb-driver is not the best choice, but the only one I found working.
