@@ -17,4 +17,4 @@ The script will create a sample calibration-file that works. But for best effort
 
 To remove the settings of the setup-script run the uninstall-script.
 
-I tested this script with raspbian jessie.
+I tested these scripts with raspbian jessie on my RaspberyPi B 2.
