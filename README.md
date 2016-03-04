@@ -10,7 +10,7 @@ http://www.banggood.com/3_2-Inch-TFT-LCD-Display-Module-Touch-Screen-For-Raspber
 
 Copy all three scripts in the same directory. Then run "sudo bash ./lcd32_setup.sh" for setting up the touchscreen.
 
-pi@raspberrypi:~ $ sudo bash ./calibrate_tft-tp.sh
+pi@raspberrypi:~ $ sudo bash ./lcd32_setup.sh
 
 When the setup-script finished, reboot your RaspberryPi to activate the screen.
 The script will create a sample calibration-file that works. But for best effort run xinput-calibrator from Menu > Settings > calibrate touchscreen
