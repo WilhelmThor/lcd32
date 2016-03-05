@@ -8,7 +8,7 @@ http://www.banggood.com/3_2-Inch-TFT-LCD-Display-Module-Touch-Screen-For-Raspber
 * calibrate_tft-tp.sh is for calibrating the screen via xinput-calibrator
 
 
-Copy all three scripts in the same directory. Then run "sudo bash ./lcd32_setup.sh" for setting up the touchscreen.
+Copy all three scripts in the **same** directory. Then run "sudo bash ./lcd32_setup.sh" for setting up the touchscreen.
 
 `pi@raspberrypi:~ $ sudo bash ./lcd32_setup.sh`
 
