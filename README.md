@@ -1,6 +1,6 @@
 ## This repository contains Bash-Scripts for automatic setup of the 
 # 3.2 Inch TFT LCD Display Module Touch Screen For Raspberry Pi B+ B A+
-# from [banggood.com] (http://www.banggood.com/3_2-Inch-TFT-LCD-Display-Module-Touch-Screen-For-Raspberry-Pi-B-B-A-p-1011516.html)
+### from [banggood.com] (http://www.banggood.com/3_2-Inch-TFT-LCD-Display-Module-Touch-Screen-For-Raspberry-Pi-B-B-A-p-1011516.html)
 
 
 * lcd32_setup.sh is setting up the 3.2" TFT-Touch-Screen
