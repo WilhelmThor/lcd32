@@ -10,13 +10,13 @@ echo "**************************************************************************
 # Change fb-display from 1 to 0 in /usr/share/X11/xorg.conf.d/99-fbturbo.conf
 sed -i 's/\/dev\/fb1/\/dev\/fb0/' /usr/share/X11/xorg.conf.d/99-fbturbo.conf 2>&1 | tee -a $LOG
 
-XCALIBPGK="xinput-calibrator"
-XCALIBPGKTEST=`dpkg -l | grep $XCALIBPGK`
-if [ ! -z "$XCALIBPGKTEST" ] ; then
-  echo "Uninstalling package $XCALIBPGK" 2>&1 | tee -a $LOG
+XCALIBPKG="xinput-calibrator"
+XCALIBPKGTEST=`dpkg -l | grep $XCALIBPKG`
+if [ ! -z "$XCALIBPKGTEST" ] ; then
+  echo "Uninstalling package $XCALIBPKG" 2>&1 | tee -a $LOG
   apt-get purge xinput-calibrator -y 2>&1 | tee -a $LOG
 else
-  echo "Package $XCALIBPGK is not installed"
+  echo "Package $XCALIBPKG is not installed"
 fi
 
 echo "Removing files" 2>&1 | tee -a $LOG
@@ -34,4 +34,3 @@ echo "
 " | tee -a $LOG
 
 exit 0
-
