@@ -13,7 +13,7 @@ Copy all three scripts in the same directory. Then run "sudo bash ./lcd32_setup.
 `pi@raspberrypi:~ $ sudo bash ./lcd32_setup.sh`
 
 When the setup-script finished, reboot your RaspberryPi to activate the screen.
-The script will create a sample calibration-file that works. But for best effort run xinput-calibrator from Menu > Settings > calibrate touchscreen
+The script will create a sample calibration-file that works. But for best effort run xinput-calibrator from Menu > Preferences > Calibrate Touchscreen
 
 To remove the settings of the setup-script run the uninstall-script.
 
