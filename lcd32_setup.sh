@@ -13,7 +13,7 @@ CMDLINEFILE="/boot/cmdline.txt"
 CMDLINETEST=`grep "$CMDLINESTRING" $CMDLINEFILE`
 if [ -z "$CMDLINETEST" ] ; then
   echo "Modifying file $CMDLINEFILE" 2>&1 | tee -a $LOG
-  cp $CMDLINEFILE $CMDLINEFILE.bak 2>&1 | tee -a $LOG
+  cp -n $CMDLINEFILE $CMDLINEFILE.bak 2>&1 | tee -a $LOG
   sed -i "s/$/$CMDLINESTRING/" $CMDLINEFILE
 else
   echo "File $CMDLINEFILE was already modified" 2>&1 | tee -a $LOG
@@ -25,7 +25,7 @@ CFGFILE="/boot/config.txt"
 CFGTEST=`grep "$CFGSTRING" $CFGFILE`
 if [ -z "$CFGTEST" ] ; then
   echo "Modifying file $CFGFILE" 2>&1 | tee -a $LOG
-  cp $CFGFILE $CFGFILE.bak 2>&1 | tee -a $LOG
+  cp -n $CFGFILE $CFGFILE.bak 2>&1 | tee -a $LOG
   echo "$CFGSTRING" >> $CFGFILE
 else
   echo "File $CFGFILE was already modified" 2>&1 | tee -a $LOG
@@ -55,7 +55,7 @@ RCLOCALFILE="/etc/rc.local"
 RCLOCALTEST=`grep "modprobe flexfb" $RCLOCALFILE`
 if [ -z "$RCLOCALTEST" ] ; then
   echo "Modifying file $RCLOCALFILE" 2>&1 | tee -a $LOG
-  cp $RCLOCALFILE $RCLOCALFILE.bak 2>&1 | tee -a $LOG
+  cp -n $RCLOCALFILE $RCLOCALFILE.bak 2>&1 | tee -a $LOG
   sed -i '/^exit 0$/i\/sbin\/modprobe flexfb width=320 height=240 buswidth=8 init=-1,0xCB,0x39,0x2C,0x00,0x34,0x02,-1,0xCF,0x00,0XC1,0X30,-1,0xE8,0x85,0x00,0x78,-1,0xEA,0x00,0x00,-1,0xED,0x64,0x03,0X12,0X81,-1,0xF7,0x20,-1,0xC0,0x23,-1,0xC1,0x10,-1,0xC5,0x3e,0x28,-1,0xC7,0x86,-1,0x36,0x28,-1,0x3A,0x55,-1,0xB1,0x00,0x18,-1,0xB6,0x08,0x82,0x27,-1,0xF2,0x00,-1,0x26,0x01,-1,0xE0,0x0F,0x31,0x2B,0x0C,0x0E,0x08,0x4E,0xF1,0x37,0x07,0x10,0x03,0x0E,0x09,0x00,-1,0XE1,0x00,0x0E,0x14,0x03,0x11,0x07,0x31,0xC1,0x48,0x08,0x0F,0x0C,0x31,0x36,0x0F,-1,0x11,-2,120,-1,0x29,-1,0x2c,-3' $RCLOCALFILE 2>&1 | tee -a $LOG
 else
   echo "File $RCLOCALFILE was already modified" 2>&1 | tee -a $LOG
@@ -74,14 +74,14 @@ fi
 
 # Installing xinput_calibrator and creating calibration file for X11
 # Calibration data for my TP: 146 3770 3905 185
-XCALIBPGK="xinput-calibrator"
-XCALIBPGKTEST=`dpkg -l | grep $XCALIBPGK`
-if [ -z "$XCALIBPGKTEST" ] ; then
+XCALIBPKG="xinput-calibrator"
+XCALIBPKGTEST=`dpkg -l | grep $XCALIBPKG`
+if [ -z "$XCALIBPKGTEST" ] ; then
   apt-get update 2>&1 | tee -a $LOG
-  echo "Installing package $XCALIBPGK" 2>&1 | tee -a $LOG
+  echo "Installing package $XCALIBPKG" 2>&1 | tee -a $LOG
   apt-get install xinput-calibrator -y 2>&1 | tee -a $LOG
 else
-  echo "Package $XCALIBPGK is already installed" 2>&1 | tee -a $LOG
+  echo "Package $XCALIBPKG is already installed" 2>&1 | tee -a $LOG
 fi
 
 # Copying calibration script, setting permissions and changing path in link file
@@ -126,4 +126,3 @@ echo "
 ********************************************************************************
 " | tee -a $LOG
 exit 0
-
