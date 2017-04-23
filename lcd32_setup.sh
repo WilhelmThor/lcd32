@@ -87,7 +87,7 @@ fi
 
 # Copying calibration script, setting permissions and changing path in link file
 CALSCRIPT="calibrate_tft-tp.sh"
-XSESSIONDPATH="/etc/X11/Xsession.d/"
+XSESSIONDPATH="/etc/X11/Xsession.d"
 if [ ! -e ${XSESSIONDPATH}/${CALSCRIPT} ] ; then
   echo "Copying file ${XSESSIONDPATH}/${CALSCRIPT}" 2>&1 | tee -a ${LOGFILE}
   cp ${CALSCRIPT} ${XSESSIONDPATH}/${CALSCRIPT} 2>&1 | tee -a ${LOGFILE}
