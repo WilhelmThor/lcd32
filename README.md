@@ -18,6 +18,6 @@ The script will create a sample calibration-file that works. But for best effort
 To remove the settings of the setup-script run the uninstall-script.
 
 I tested these scripts with raspbian jessie on my RaspberyPi B 2.
-The setup-script adds settings to config-files (/boot/cmdline.txt /boot/config.txt /etc/rc.local) and creates a few needed config-files. Further it installs xinput-calibrator from the standard raspbian-jessie-repository.
+The setup-script adds settings to config-files (/boot/cmdline.txt /boot/config.txt /etc/rc.local) and creates a few needed config-files. Further it installs xinput-calibrator from the standard raspbian-jessie-repository. After changes in raspbian the package xserver-xorg-input-evdev is needed and the path for the configuration file is modified.
 You can rerun the setup-script, if updates causing the display to work not anymore. Missing files or settings will be restored by the script, existing will remain.
 Perhaps the flexfb-driver is not the best choice, but the only one I found working.
